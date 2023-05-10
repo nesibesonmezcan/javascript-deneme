@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="btnSayHello1()">on click1</button>
+    <button id="btnSayHello2">on click2</button>
+    <button id="btnSayHello3">on click3</button>
+    <button id="btnSayHello4">on click4</button>
+    <button id="btnSayHello5">on click5</button>
+
+
+
+
+
+    <script>
+        //standrt function
+        function btnSayHello1() {
+            alert("Hello")
+        }
+        //2.yöntem
+        const btnSayHello2 = () => {
+            alert("Hello")
+
+        }
+
+        document.querySelector("#btnSayHello2").onclick = btnSayHello2
+
+        //YÖNTEM3
+
+        document.querySelector("#btnSayHello3").onclick = (e) => {
+            console.log(e);
+            alert("hello")
+        }
+        // YÖNTEM 4
+        const btnSayHello4 = function () {
+            alert("Hello")
+        }
+        document.querySelector("#btnSayHello4").addEventListener("click", btnSayHello4);
+
+        //yöntem5
+        document.querySelector("#btnSayHello5").addEventListener("click", () => {
+            alert("Hello")
+        })
+
+
+    </script>
+</body>
+
+</html>
