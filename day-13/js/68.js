@@ -20,7 +20,7 @@ const fillCountryTable = (country) => {
     const currency = Object.keys(country.currencies).join("-");
     const languages = Object.values(country.languages).join("-");
     const area = country.area;
-    const map = `<a href="https://google.com/maps?q=${country.latlng}" target="_blank">Go to map</a>`;;
+    const map = `<a href="https://google.com/maps?q=${country.latlng}"" target="_blank">Go to map</a>`;;
     tblCountry.querySelector("tr:nth-child(1) td").innerHTML = capitalCity;
     tblCountry.querySelector("tr:nth-child(2) td").innerHTML = currency;
     tblCountry.querySelector("tr:nth-child(3) td").innerHTML = languages;

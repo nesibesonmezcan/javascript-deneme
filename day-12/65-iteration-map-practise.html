@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Iteration Map</title>
 </head>
 
 <body>
+
+
+
+
     <script>
         const products = [
             { id: 1, name: 'laptop', price: 20000 },
@@ -22,9 +26,20 @@
             { id: 9, name: 'earphone', price: 150 },
             { id: 10, name: 'speaker', price: 150 },
         ];
-        const newArr = products.filter(product => product.price > 500)
-            .map(product => product.price * 1.15)
-            .forEach((product) => console.log(product))
+
+
+        const newProducts = products.map((product) => {
+            if (product.price > 500) {
+                product.price *= 1.10;
+            }
+            else {
+                product.price *= 1.15;
+            }
+            return product;
+        })
+
+        console.log(newProducts);
+
 
 
 
