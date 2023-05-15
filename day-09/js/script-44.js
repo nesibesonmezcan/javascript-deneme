@@ -18,49 +18,48 @@ const start = () => {
     btnGuess.classList.remove("d-none");
     btnStart.innerHTML = "Reset game";
     txtResult.innerHTML = "";
-}   
+}
 
 const reset = () => {
     btnGuess.classList.add("d-none");
-    txtNum.setAttribute("disabled","true");
+    txtNum.setAttribute("disabled", "true");
     btnStart.innerHTML = "Start game";
 }
 
 const guess = () => {
     const guessNumber = Number(txtNum.value);
 
-    if(!guessNumber || isNaN(guessNumber) || guessNumber>maxRandomNumber || guessNumber<minRandomNumber){
+    if (!guessNumber || isNaN(guessNumber) || guessNumber > maxRandomNumber || guessNumber < minRandomNumber) {
         txtResult.innerHTML = `Please type a number between ${minRandomNumber}-${maxRandomNumber}`;
         return;
     }
 
-    if(guessNumber === randomNumber){
+    if (guessNumber === randomNumber) {
         txtResult.innerHTML = "🏆🏆🏆 You win! 🏆🏆🏆";
         txtResult.classList.replace("text-danger", "text-success");
         reset();
     }
-    else if(guessNumber > randomNumber){
+    else if (guessNumber > randomNumber) {
         txtResult.innerHTML = `${guessNumber} is too high! Lower the number! 👎`;
     }
-    else{
+    else {
         txtResult.innerHTML = `${guessNumber} is too low! Raise the number! 👍`;
     }
 
     txtNum.focus();
-    txtNum.value="";
-  
+    txtNum.value = "";
+
 }
 
 totalShot--;
-txtResult.innerHTML +="kalan hak sayısı
-"
-if(totalShot==0){
-    btnGuess.innerHTML=true;
-    btnStart.innerHTML=false;
+txtResult.innerHTML += "kalan hak sayısı"
+if (totalShot == 0) {
+    btnGuess.innerHTML = true;
+    btnStart.innerHTML = false;
 
 }
 const getRandomNumber = () => {
-    return Math.floor(Math.random() * (maxRandomNumber - minRandomNumber + 1) ) + minRandomNumber;
+    return Math.floor(Math.random() * (maxRandomNumber - minRandomNumber + 1)) + minRandomNumber;
 
     /* 
         Math.floor(Math.random() * (max - min + 1) ) + min;

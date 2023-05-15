@@ -15,12 +15,20 @@ const loadData = () => {
     const ddlCountries=document.querySelector("#ddlCountries")
     ddlCountries.innerHTML = options;
 }
+
+
+
 const fillCountryTable = (country) => {
+
     const capitalCity = country.capital.join("-");
+
     const currency = Object.keys(country.currencies).join("-");
+    console.log(currency)
     const languages = Object.values(country.languages).join("-");
     const area = country.area;
     const map = `<a href="https://google.com/maps?q=${country.latlng}"" target="_blank">Go to map</a>`;;
+   
+   
     tblCountry.querySelector("tr:nth-child(1) td").innerHTML = capitalCity;
     tblCountry.querySelector("tr:nth-child(2) td").innerHTML = currency;
     tblCountry.querySelector("tr:nth-child(3) td").innerHTML = languages;
@@ -33,3 +41,5 @@ const getCountry = (countryCode) => {
     return filteredCountries.length>0 ? filteredCountries[0] : null;
 }
 loadData();
+
+
