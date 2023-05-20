@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const person = {
+            name: "Ahmed",
+            age: 20,
+            job: "student",
+            eyeColor: "green"
+        }
+
+        const messange1 = `${person.name} isimli personel ${person.age} yaşına girdi.`
+
+        console.log(messange1)
+
+        const { name, age } = person;
+        const messange2 = `${name} isimli personel ${age} yaşına girdi.`
+        console.log(messange2)
+
+    </script>
+</body>
+
+</html>
